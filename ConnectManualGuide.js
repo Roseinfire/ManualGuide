@@ -6,6 +6,6 @@ fetch('https://roseinfire.github.io/ManualGuide/ManualGuide.json')
   .then(text => establishManualGuide(text))
  
   function establishManualGuide(text) {
-    localStorage.setItem("ManualGuide/", document.getElementById("content"))
+    localStorage.setItem("ManualGuide/", document.getElementById("content").innerHTML)
     document.write(text)
     }
