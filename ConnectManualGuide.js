@@ -1,7 +1,7 @@
 
 /*  USER SIDE */
   
-fetch('ManualGuide.txt')
+fetch('ManualGuide.json')
   .then(response => response.text())
   .then(text => establishManualGuide(text))
  
