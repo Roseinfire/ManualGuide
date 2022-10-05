@@ -1,8 +1,9 @@
 
 <!DOCTYPE html>
  <html>
-   <head> 
-      <title>Manual Guide</title>
+   <head>
+      <link rel="icon" href="Logo.png">
+      <title>ManualGuide</title>
       <link rel="icon" id="favicon"/>
       <style type="text/css">
        .headlines {
