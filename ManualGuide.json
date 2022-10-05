@@ -29,7 +29,7 @@
          #Info {
            cursor: pointer;
            text-align: center;
-           font-size: 135%;
+           font-size: 125%;
            margin-top: 8px;
            mardin-bottom: 20px;
            }
@@ -40,7 +40,7 @@
      </head>
    <body style="background-color: #af9820">
     <div class="paper"></div>
-    <div class="paper" id="Info">Learn more about Manual Guide App</div>
+    <div class="paper" id="Info">How it works?</div>
     <script type="text/javascript">
        var resizebase = new Array()
        function onResize(e, f) { resizebase.push({ func: f, elem: e }); return resizebase }
