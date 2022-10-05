@@ -40,7 +40,7 @@
      </head>
    <body style="background-color: #af9820">
     <div class="paper"></div>
-    <div class="paper" id="Info">How it works?</div>
+    <div class="paper" id="Info" style="color: gray">How it works?</div>
     <script type="text/javascript">
        var resizebase = new Array()
        function onResize(e, f) { resizebase.push({ func: f, elem: e }); return resizebase }
