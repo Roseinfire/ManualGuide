@@ -4,7 +4,6 @@
    <head>
       <link rel="icon" href="Logo.png">
       <title>ManualGuide</title>
-      <link rel="icon" id="favicon"/>
       <style type="text/css">
        .headlines {
         padding: 10px;
