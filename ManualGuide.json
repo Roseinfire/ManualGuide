@@ -108,13 +108,14 @@
            if(documentList.length) { 
             documentProgression++
             if(documentList[documentProgression]) { documentList[documentProgression]() }
+            else { window.onload(); window.onresize() }
               } else { 
                  var hand = document.getElementsByClassName("paper")[0]
                  var string = document.createElement("p")
                  string.innerHTML = "Nothing to explore.."
                  hand.append(string)
                  intializeStyle(string, ["font-size: 130%; text-align: center"])
-              }; window.onresize(); window.onload()
+              };
             }
          function write(text, type, style) {
            var hand = document.getElementsByClassName("paper")[0]
