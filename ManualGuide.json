@@ -2,7 +2,7 @@
 <!DOCTYPE html>
  <html>
    <head>
-      <link rel="icon" src="Logo.png">
+      <link rel="icon" href="Logo.png">
       <title id="tle">ManualGuide</title>
       <style type="text/css">
        .headlines {
