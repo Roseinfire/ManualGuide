@@ -29,9 +29,10 @@
          #Info {
            cursor: pointer;
            text-align: center;
-           font-size: 108%;
-           margin-top: 8px;
-           mardin-bottom: 20px;
+           font-size: 90%;
+           margin-top: 10px;
+           margin-bottom: 10px;
+           padding: 2px;
            }
          #Info:active {
            border-bottom: 2px solid;
