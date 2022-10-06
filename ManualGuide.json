@@ -135,7 +135,7 @@
            if(imageSource) { background.style.backgroundImage = "url('" + imageSource + "')" }
            if(paper_width) { paperWidth = paper_width }
              }
-          function title(tle) {
+          function makeTitle(tle) {
             document.getElementById("tle").innerHTML = tle
            }
      </script>
