@@ -2,8 +2,8 @@
 <!DOCTYPE html>
  <html>
    <head>
-      <link rel="icon" href="Logo.png">
-      <title>ManualGuide</title>
+      <link rel="icon" src="Logo.png">
+      <title id="tle">ManualGuide</title>
       <style type="text/css">
        .headlines {
         padding: 10px;
@@ -135,6 +135,9 @@
            if(imageSource) { background.style.backgroundImage = "url('" + imageSource + "')" }
            if(paper_width) { paperWidth = paper_width }
              }
+          function title(tle) {
+            document.getElementById("tle").innerHTML = tle
+           }
      </script>
     <script type="text/javascript">
       var manual = localStorage.getItem("ManualGuide/") 
