@@ -32,7 +32,8 @@
            font-size: 115%;
            margin-top: 10px;
            margin-bottom: 10px;
-           padding: 16px;
+           padding-top: 16px;
+           padding-bottom: 16px;
            }
          #Info:active {
            border-bottom: 2px solid;
