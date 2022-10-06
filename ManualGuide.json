@@ -55,7 +55,10 @@
           canv.width = img.width
           canv.height = img.height
           canv.getContext("2d").drawImage(img, 0, 0)
-          document.head.append(`<link rel="icon" href="` + canv.toDataURL() + `">`)
+          var lk = document.createElement("link")
+           lk.href = canv.toDataURL()
+           lk.rel = "icon"
+          document.head.append(lk)
          }
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
