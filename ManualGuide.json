@@ -32,7 +32,7 @@
            font-size: 115%;
            margin-top: 10px;
            margin-bottom: 10px;
-           padding: 2px;
+           padding: 8px;
            }
          #Info:active {
            border-bottom: 2px solid;
@@ -71,7 +71,7 @@
            e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
            e.style.width = (innerWidth-2*e.offsetLeft)+"px"
             } else {
-               e.style.width = innerWidth-80+"px"
+               e.style.width = innerWidth+80+"px"
                e.style.marginLeft = 40 + "px"
               }
           })
