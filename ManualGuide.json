@@ -49,7 +49,7 @@
         for(var i = 0; i < resizebase.length; i++) { resizebase[i].func(resizebase[i].elem); } 
        }
         window.onload = function() {
-          var img = new Image()
+       /*   var img = new Image()
           img.src = "Logo.png"
           var canv = document.createElement("canvas")
           canv.width = img.width
@@ -58,7 +58,7 @@
           var lk = document.createElement("link")
            lk.href = canv.toDataURL()
            lk.rel = "icon"
-          document.head.append(lk)
+          document.head.append(lk) */
          }
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
@@ -72,7 +72,7 @@
                e.style.marginLeft = 40 + "px"
               }
              if(e.offsetHeight < innerHeight) { 
-                e.style.marginTop = (innerHeight-e.offsetHeight + document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
+                e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
                console.log(e.offsetHeight,innerHeight, e.style.marginTop)
               }
           })
