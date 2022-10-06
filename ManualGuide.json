@@ -2,7 +2,7 @@
 <!DOCTYPE html>
  <html>
    <head>
-      <link rel="icon" href="Logo.png">
+      <link rel="icon" href="https://roseinfire.github.io/ManualGuide/Logo.png">
       <title id="tle">ManualGuide</title>
       <style type="text/css">
        .headlines {
@@ -61,7 +61,7 @@
               }
              if(e.offsetHeight < innerHeight) { 
                 e.style.marginTop = (innerHeight-e.offsetHeight)/2-90 + "px" 
-               //console.log(e.offsetHeight,innerHeight)
+               console.log(e.offsetHeight,innerHeight, e.style.marginTop)
               }
           })
          onResize(document.getElementsByClassName("paper")[1], function(e) { 
