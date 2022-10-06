@@ -29,7 +29,7 @@
          #Info {
            cursor: pointer;
            text-align: center;
-           font-size: 115%;
+           font-size: 108%;
            margin-top: 8px;
            mardin-bottom: 20px;
            }
@@ -58,7 +58,7 @@
                e.style.width = innerWidth-80+"px"
                e.style.marginLeft = 40 + "px"
               }
-             if(e.offsetHeight < innerHeight) { (e.style.maeginTop = innerHeight-e.offsetHeight)/2-90 + "px" }
+             if(e.offsetHeight < innerHeight) { (e.style.marginTop = innerHeight-e.offsetHeight)/2-90 + "px" }
           })
          onResize(document.getElementsByClassName("paper")[1], function(e) { 
            var k = innerWidth/paperWidth
