@@ -62,7 +62,7 @@
          }
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
-           var k = screen.availWidth/paperWidth
+           var k = innerWidth/paperWidth
            if(innerWidth > paperWidth) { k = 1/k }
            if(innerHeight < innerWidth) {
            e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
