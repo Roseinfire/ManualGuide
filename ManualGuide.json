@@ -61,9 +61,9 @@
              if(e.offsetHeight < innerHeight) { (e.style.maeginTop = innerHeight-e.offsetHeight)/2-90 + "px" }
           })
          onResize(document.getElementsByClassName("paper")[1], function(e) { 
-           var k = screen.availWidth/paperWidth
-           if(screen.availWidth > paperWidth) { k = 1/k }
-           if(screen.availHeight < screen.availWidth) {
+           var k = innerWidth/paperWidth
+           if(innerWidth > paperWidth) { k = 1/k }
+           if(innerHeight < screen.availWidth) {
            e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
            e.style.width = (innerWidth-2*e.offsetLeft)+"px"
             } else {
