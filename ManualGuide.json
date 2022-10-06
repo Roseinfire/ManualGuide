@@ -72,7 +72,7 @@
                e.style.marginLeft = 40 + "px"
               }
              if(e.offsetHeight < innerHeight) { 
-                e.style.marginTop = (innerHeight-e.offsetHeight)/2 -30 + "px" 
+                e.style.marginTop = (innerHeight-e.offsetHeight + document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
                console.log(e.offsetHeight,innerHeight, e.style.marginTop)
               }
           })
