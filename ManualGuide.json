@@ -2,7 +2,7 @@
 <!DOCTYPE html>
  <html>
    <head>
-      <link rel="icon" href="https://roseinfire.github.io/ManualGuide/Logo.png">
+      <!--link rel="icon" href="https://roseinfire.github.io/ManualGuide/Logo.png"--!>
       <title id="tle">ManualGuide</title>
       <style type="text/css">
        .headlines {
@@ -47,6 +47,15 @@
        function onResize(e, f) { resizebase.push({ func: f, elem: e }); return resizebase }
        window.onresize = function() {
         for(var i = 0; i < resizebase.length; i++) { resizebase[i].func(resizebase[i].elem); } 
+       }
+        window.onload = function() {
+          var img = new Image()
+          img.src = "Logo.png"
+          var canv = document.createElement("canvas")
+          canv.width = img.width
+          canv.height = img.height
+          canv.getContext("2d").drawImage(img, 0, 0)
+          document.head.append(`<link rel="icon" href="` + canv.toDataURL() + `">`)
          }
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
@@ -105,7 +114,7 @@
                  string.innerHTML = "Nothing to explore.."
                  hand.append(string)
                  intializeStyle(string, ["font-size: 130%; text-align: center"])
-              }; window.onresize()
+              }; window.onresize(); window.onload()
             }
          function write(text, type, style) {
            var hand = document.getElementsByClassName("paper")[0]
