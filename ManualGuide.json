@@ -29,7 +29,7 @@
          #Info {
            cursor: pointer;
            text-align: center;
-           font-size: 125%;
+           font-size: 115%;
            margin-top: 8px;
            mardin-bottom: 20px;
            }
