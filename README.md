@@ -55,7 +55,8 @@ where:
       <script src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>
       </head>
             <p id="content" style="display: none">
-                write("As example let's draw a rose:", "p", ["font-size: 135%; color: brown; text-align: center;"])
+                var style = ["font-size: 135%;", "color: brown;", "text-align: center;"]
+                write("As example let's draw a rose:", "p", style)
                 image("https://roseinfire.github.io/ManualGuide/RoseLogo.png", 40)
             </p>
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
