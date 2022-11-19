@@ -50,7 +50,16 @@ where:
 * third argument is array CSS commands
 
 # Examples
-```
+```html
+<html><head>
+      <script src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>
+      </head>
+            <p id="content" style="display: none">
+                write("As example:", "h1", ["font-size: 115%", "color: gold"])
+                image("https://upload.wikimedia.org/wikipedia/commons/4/49/Pacman.svg", 40)
+            </p>
+          <p style="text-align: center; font-size: 110%">Probably no Internet</p>
+    </html>
 ```
 # Explanation
 
