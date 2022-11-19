@@ -62,6 +62,7 @@ where:
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
 ```
+Same example as page [Example.html](https://roseinfire.github.io/ManualGuide/Example.html)
 # Explanation
 When your html file loaded, script which you connected begin his work.
 "content" saved to localStorage while document rewriting according to ManualGuide.json,
