@@ -29,18 +29,18 @@
          #Info {
            cursor: pointer;
            text-align: center;
-           font-size: 115%;
+           font-size: 90%;
            margin-top: 10px;
            margin-bottom: 10px;
-           padding-top: 16px;
-           padding-bottom: 16px;
+           padding-top: 10px;
+           padding-bottom: 10px;
            }
          #Info:active {
            border-bottom: 2px solid;
            }
       </style>
      </head>
-   <body style="background-color: #af9820">
+   <body style="background-color: white">
     <div class="paper"></div>
     <div class="paper" id="Info">Learn More</div>
     <script type="text/javascript">
@@ -116,7 +116,7 @@
               } else { 
                  var hand = document.getElementsByClassName("paper")[0]
                  var string = document.createElement("p")
-                 string.innerHTML = "Nothing to explore.."
+                 string.innerHTML = "Document Emty."
                  hand.append(string)
                  intializeStyle(string, ["font-size: 130%; text-align: center"])
               };
