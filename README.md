@@ -3,7 +3,7 @@
 ```
 <html><head>
    <meta charset="UTF-8">
-      <script src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>\
+      <script src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>
       </head>
             <p id="content" style="display: none">
                 
