@@ -8,12 +8,15 @@
     <div style="margin-top: 150px"> <p>Use scriptlink form to connect ManualGuide</p> <button>copy scriptlink</button> </div>
     <p>for more information see <a href="https://github.com/Roseinfire/ManualGuide">https://github.com/Roseinfire/ManualGuide</a> </p>
     <script>document.getElementsByTagName("button")[0].onclick=function() {
-       var form = "<ht" + "ml><head>" + `<meta charset="UTF-8">` +
-          "<scrip" + "t" + ` src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"` + "></sc" + "ript></head>" + `
+       var form = "<html><head>" + `
+   <meta charset="UTF-8">` + `
+      <script src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>\
+      </head>` + `
             <p id="content" style="display: none">
                  
-            </p>
-          ` + `<p style="text-align: center; font-size: 110%">Probably no Internet</p>` + "</ht" + "ml>"
+            </p>` + `
+         <p style="text-align: center; font-size: 110%">Probably no Internet</p>
+    </ht`+"ml>"
           navigator.clipboard.writeText(form);
           this.innerHTML = "successfull"
        }</script>
