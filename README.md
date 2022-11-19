@@ -1,4 +1,4 @@
-# What is ManualGude?
+# About ManualGude
 
 # Creating new document
 via form below:
