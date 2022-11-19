@@ -68,6 +68,3 @@ which can read "content" as simple JavaScript. So, content cannot be stolen by t
 all the time stored on device. 
 :rotating_light: Nevertheless, connecting scripts like this doesn't garant security, cause
 script potentially has full control over the page. You can inspect our useside [here.](https://github.com/Roseinfire/ManualGuide/blob/main/ConnectManualGuide.js)
-# Trouble Shooting
-![Document Empty](https://roseinfire.github.io/ManualGuide/EmptyDoc.png)
-Error literally means empy document. You should write something inside the "content" tag.
