@@ -1,7 +1,6 @@
 # What is ManualGude?
 
 # Creating new document
-via website: [Connect ManualGuide](https://roseinfire.github.io/ManualGuide/)
 via form below:
 ```html
 <html><head>
