@@ -8,19 +8,19 @@ There are only three main functions:
  Allows you almost no need to write HTML.
 
 # Creating new document
-via form below:
+create html document via form below:
 ```html
 <html><head>
    <meta charset="UTF-8">
       <script src="https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>
       </head>
             <p id="content" style="display: none">
-                
+                /* "content" tag must includes syntaxis, which described below. */
             </p>
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
 ```
-"content" tag must includes ManualCode, which described below:
+Run in browser. Ready!
 # Syntaxis
 The "write" function: 
 ```JavaScript
@@ -62,5 +62,10 @@ where:
     </html>
 ```
 # Explanation
-
+When your html file loaded, script which you connected begin his work.
+"content" saved to localStorage while document rewriting according to ManualGuide.json,
+which can read "content" as simple JavaScript. So, content cannot be stolen by third persons, because
+all the time stored on device. 
+:rotating_light: Nevertheless, connecting scripts like this doesn't garant security, cause
+script potentially has full control over the page.
 # Trouble Shooting
