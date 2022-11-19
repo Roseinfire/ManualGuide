@@ -16,17 +16,35 @@ via form below:
 via website: [Connect ManualGuide](https://roseinfire.github.io/ManualGuide/)
 # Syntaxis
 The "write" function: 
+```JavaScript
+write("Example", "p", ["color: brown; font-size: 120%"])
 ```
-```
+where:
+* first argument is text inside html element
+* second argument is HTML tag
+* third argument is array of CSS commands
+
 The "background" function:
+```JavaScript
+background("yellow", "https://Example-Background.png", 2100)
 ```
-```
+where:
+* first argument is background color
+* second argument is background-image source
+* third argument is expected screen width
+
 The "image" function:
+```JavaScript
+image("https://Expample-Image.jpg", 40, ["border: 1px solid"])
 ```
-```
+where:
+* first argument is image source
+* second argument is relative margin
+* third argument is array CSS commands
+
 # Examples
 ```
 ```
 # Explanation
 
-# Debagging
+# Trouble Shooting
