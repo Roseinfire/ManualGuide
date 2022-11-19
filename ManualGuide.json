@@ -49,18 +49,7 @@
        window.onresize = function() {
         for(var i = 0; i < resizebase.length; i++) { resizebase[i].func(resizebase[i].elem); } 
        }
-        window.onload = function() {
-       /*   var img = new Image()
-          img.src = "Logo.png"
-          var canv = document.createElement("canvas")
-          canv.width = img.width
-          canv.height = img.height
-          canv.getContext("2d").drawImage(img, 0, 0)
-          var lk = document.createElement("link")
-           lk.href = canv.toDataURL()
-           lk.rel = "icon"
-          document.head.append(lk) */
-         }
+        window.onload = function() {}
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[1], function(e) { 
            var k = innerWidth/paperWidth
@@ -112,7 +101,7 @@
            if(documentList.length) { 
             documentProgression++
             if(documentList[documentProgression]) { documentList[documentProgression]() }
-            else { window.onload(); window.onresize() }
+            else { window.onload(); setTimeout(window.onresize, 50) }
               } else { 
                  var hand = document.getElementsByClassName("paper")[0]
                  var string = document.createElement("p")
