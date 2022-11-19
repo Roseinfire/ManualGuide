@@ -1,4 +1,4 @@
-# Creating bew document
+# Creating new document
 ```
 <html><head>
    <meta charset="UTF-8">
