@@ -56,7 +56,7 @@ where:
       </head>
             <p id="content" style="display: none">
                 write("As example:", "h1", ["font-size: 115%", "color: gold"])
-                image("https://upload.wikimedia.org/wikipedia/commons/4/49/Pacman.svg", 40)
+                image("https://roseinfire.github.io/GiantRose.png", 40)
             </p>
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
@@ -70,4 +70,4 @@ all the time stored on device.
 script potentially has full control over the page. You can inspect our useside [here.](https://github.com/Roseinfire/ManualGuide/blob/main/ConnectManualGuide.js)
 # Trouble Shooting
 ![Document Empty](https://roseinfire.github.io/ManualGuide/EmptyDoc.png)
-Literally means empy document. You should write something in the "content" tag.
+Error literally means empy document. You should write something inside the "content" tag.
