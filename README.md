@@ -1,4 +1,11 @@
-# About ManualGude
+# About ManualGuide
+It's like presentation language based on html.
+There are only three main functions:
+* write
+* image
+* background
+Which allows you almost no need to write HTML.
+All styles will be created automatically.
 
 # Creating new document
 via form below:
@@ -13,6 +20,7 @@ via form below:
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
 ```
+"content" tag must includes ManualCode, which described below:
 # Syntaxis
 The "write" function: 
 ```JavaScript
