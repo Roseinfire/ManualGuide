@@ -4,9 +4,7 @@ There are only three main functions:
 * write
 * image
 * background
-
-Which allows you almost no need to write HTML.
-All styles will be created automatically.
+They allows you almost no need to write HTML.
 
 # Creating new document
 via form below:
