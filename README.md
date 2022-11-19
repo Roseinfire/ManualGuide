@@ -12,7 +12,7 @@ via form below:
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
 ```
-via website: [Connect]("index.html")
+via website: [Connect](index.html)
 # Syntaxis
 The "write" function: 
 ```
