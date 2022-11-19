@@ -67,5 +67,5 @@ When your html file loaded, script which you connected begin his work.
 which can read "content" as simple JavaScript. So, content cannot be stolen by third persons, because
 all the time stored on device. 
 :rotating_light: Nevertheless, connecting scripts like this doesn't garant security, cause
-script potentially has full control over the page. You can inspect our useside repository [here]('ManulGuide/ConnectManualGuide.js')
+script potentially has full control over the page. You can inspect our useside repository [here.](ManulGuide/ConnectManualGuide.js)
 # Trouble Shooting
