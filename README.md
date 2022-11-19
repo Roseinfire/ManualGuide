@@ -1,6 +1,7 @@
 # What is ManualGude?
 
 # Creating new document
+via website: [Connect ManualGuide](https://roseinfire.github.io/ManualGuide/)
 via form below:
 ```html
 <html><head>
@@ -13,7 +14,6 @@ via form below:
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
 ```
-via website: [Connect ManualGuide](https://roseinfire.github.io/ManualGuide/)
 # Syntaxis
 The "write" function: 
 ```JavaScript
