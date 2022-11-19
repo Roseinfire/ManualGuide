@@ -5,7 +5,7 @@ There are only three main functions:
 * image
 * background
 
- Allows you almost no need to write HTML.
+ Allows you almost not write HTML.
 
 # Creating new document
 create html document via form below:
