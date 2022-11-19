@@ -13,7 +13,7 @@ via form below:
           <p style="text-align: center; font-size: 110%">Probably no Internet</p>
     </html>
 ```
-via website: [Go to ManualGuide](https://roseinfire.github.io/ManualGuide/)
+via website: [Connect ManualGuide](https://roseinfire.github.io/ManualGuide/)
 # Syntaxis
 The "write" function: 
 ```
