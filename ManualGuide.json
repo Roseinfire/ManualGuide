@@ -149,7 +149,7 @@
             }
      </script>
     <script type="text/javascript">
-      var manual = localStorage.getItem("ManualGuide/")
+      var manual = window.content
        var script = document.createElement("script")
        script.innerHTML = manual
        document.body.append(script); continueReading();
