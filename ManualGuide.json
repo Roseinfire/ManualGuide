@@ -74,7 +74,7 @@
               }
              if(e.offsetHeight < innerHeight) { 
                 e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
-               console.log(e.offsetHeight,innerHeight, e.style.marginTop)
+               // console.log(e.offsetHeight,innerHeight, e.style.marginTop)
               }
           })
         document.getElementsByClassName("paper")[1].onclick = function() {
