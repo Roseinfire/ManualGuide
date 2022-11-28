@@ -5,26 +5,26 @@
       <!--link rel="icon" href="https://roseinfire.github.io/ManualGuide/Logo.png"--!>
       <title id="tle">ManualGuide</title>
       <style type="text/css">
-       .headlines {
-        padding: 10px;
-        font-size: 170%;
+        .headlines {
+            padding: 10px;
+            font-size: 170%;
           }
-       .strings {
-        font-size: 130%;
-        padding: 25px;
-        padding-right: 120px;
+        .strings {
+            font-size: 130%;
+            padding: 25px;
+            padding-right: 120px;
          }
-       .centralLine {
-         text-align: center;
-         padding: 10px;
-         font-size: 180%;
+        .centralLine {
+            text-align: center;
+            padding: 10px;
+            font-size: 180%;
          }
         .paper {
-         background-color: white;
-         border-radius: 20px;
-         padding-bottom: 10px;
-         padding-top: 15px;
-         border: 1px dotted;
+            background-color: white;
+            border-radius: 20px;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            border: 1px dotted;
           }
          #Info {
            cursor: pointer;
@@ -74,19 +74,18 @@
               }
              if(e.offsetHeight < innerHeight) { 
                 e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
-               // console.log(e.offsetHeight,innerHeight, e.style.marginTop)
               }
           })
         document.getElementsByClassName("paper")[1].onclick = function() {
            window.open("https://github.com/Roseinfire/ManualGuide")
           }
-  
-  
        function intializeStyle(element, style, dynamic_style) {
         if(style) {
          var css = ""
          for(var i = 0; i < style.length; i++) {
-           css += style[i]
+           if(style[i].length && style[i][style[i].length-1] == ";") {
+             css += style[i]
+               } else { css += (style[i] + ";") }
              }; element.style = css
            }
            if(dynamic_style) {
@@ -110,17 +109,18 @@
                  intializeStyle(string, ["font-size: 130%; text-align: center"])
               };
             }
-         function write(text, type, style) {
+         function write(text, type, style, recall=function() {}) {
            var hand = document.getElementsByClassName("paper")[0]
            documentList.push(function() {
            var string = document.createElement(type)
            string.innerHTML = text
            hand.append(string)
            intializeStyle(string, style)
+           recall(string)
            continueReading()
                })
              }
-         function image(src, fullwidth, style) {
+         function image(src, fullwidth, style, recall=function() {}) {
             var hand = document.getElementsByClassName("paper")[0]
             documentList.push(function() {
             var img = new Image()
@@ -131,12 +131,13 @@
                    im.width = hand.offsetWidth-fullwidth; 
                    im.style.marginLeft = fullwidth/2+"px"
                     } });
+                 recall(img)
                  continueReading()
                  }
                })
              }
          function background(color, imageSource, paper_width) {
-           var background=document.body //document.getElementById("background")
+           var background=document.body
            background.style.backgroundColor = color
            if(imageSource) { background.style.backgroundImage = "url('" + imageSource + "')" }
            if(paper_width) { paperWidth = paper_width }
