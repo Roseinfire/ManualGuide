@@ -133,7 +133,9 @@
              console.log(res)
              if(tempowrite) { onResize(tempowrite, function(e) {
                 try {
-                    e.style.width = hand.offsetWidth-eval(res)
+                    var padding = eval(res)
+                    e.style.marginLeft = 2*padding
+                    e.style.width = (hand.offsetWidth-padding) + "px"
                       } catch { console.error("Invalid spec: ", res) }
                    }); tempowrite = null; }
                })
