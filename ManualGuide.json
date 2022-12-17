@@ -33,7 +33,7 @@
   <div id="content" style="display: none">
     <div class="paper"> Document Empy </div>
     <div class="paper" id="Info">Learn more</div>
-  <div>
+  </div>
   <div id="load">Loading..</div>
     <script type="text/javascript">
        var hand = document.getElementsByClassName("paper")[0]
