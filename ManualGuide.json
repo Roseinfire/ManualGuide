@@ -162,9 +162,9 @@
                      }
                  }; return hasattribute
            }
-        specs.push({ tag: "IMG", key: "$", spec: function(e) {
-           e.style.marginLeft="40px"
-           e.onResize(function() {
+        specs.push({ tag: "IMG", key: "$", spec: function(element) {
+           element.style.marginLeft="40px"
+           onResize(element, function(e) {
                  e.width = hand.offsetWidth-80
                    })
             } })
