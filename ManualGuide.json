@@ -123,10 +123,17 @@
                   tempotext = null; tempotype = null;
                   } catch { console.error("Can't find link @" + res) }
                })
-            pushkeyword("{", "}", function(res) { 
+            pushkeyword(["{"], ["}"], function(res) { 
                  if(tempowrite) {
                   tempowrite.attribute(res)
                       }
+               })
+            pushkeyword("["], ["]"], function(res) {
+             if(tempowrite) { onResize(tempowrite, function(e) {
+                try {
+                    e.style.width = hand.offsetWidth-eval(res)
+                      } catch { console.error("Invalid spec: ", res) }
+                   }); tempowrite = null; }
                })
   
          function write(text, type, style) { 
@@ -147,27 +154,10 @@
           }
          HTMLElement.prototype.attribute = function(data) {
               try {
-                if( !searchspecs(this, data) ) {
                    eval("this." + data)
-                     }
                  } catch { console.error("Can't declare attribute: ", data) }
           }
         function truewrite(e) { hand.append(e) }
-        var specs = []
-        function searchspecs(element, data) {
-           var hasattribute = false
-           for(var i = 0; i < specs.length; i++) {
-                 if(specs[i].tag == element.tagName && specs[i].key == data) {
-                   specs[i].spec(element); hasattribute = true
-                     }
-                 }; return hasattribute
-           }
-        specs.push({ tag: "IMG", key: "$", spec: function(element) {
-           element.style.marginLeft="40px"
-           onResize(element, function(e) {
-                 e.width = hand.offsetWidth-80
-                   })
-            } })
     </script>
     <script type="text/javascript">
         background(__manual__.backgroundColor, __manual__.backgroundImage, __manual__.width)
