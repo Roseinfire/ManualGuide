@@ -128,7 +128,7 @@
                   tempowrite.attribute(res)
                       }
                })
-            pushkeyword("["], ["]"], function(res) {
+            pushkeyword(["["], ["]"], function(res) {
              if(tempowrite) { onResize(tempowrite, function(e) {
                 try {
                     e.style.width = hand.offsetWidth-eval(res)
