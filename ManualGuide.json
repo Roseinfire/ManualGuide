@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+ <html>
+   <head> 
+      <title>Manual Guide</title>
+      <style type="text/css">
+        .paper {
+             background-color: white;
+             border-radius: 20px;
+             padding-bottom: 10px;
+             padding-top: 15px;
+             border: 1px dotted;
+          }
+         #Info {
+               cursor: pointer;
+               text-align: center;
+               font-size: 135%;
+               margin-top: 8px;
+               mardin-bottom: 20px;
+           }
+         #Info:active {
+               border-bottom: 2px solid;
+           }
+      </style>
+     </head>
+   <body style="background-color: white">
+    <div class="paper"></div>
+    <div class="paper" id="Info">Learn more</div>
+    <script type="text/javascript">
+       var hand = document.getElementsByClassName("paper")[0]
+       var resizebase = new Array()
+       function onResize(e, f) { resizebase.push({ func: f, elem: e }); return resizebase }
+       window.onresize = function() {
+        for(var i = 0; i < resizebase.length; i++) { resizebase[i].func(resizebase[i].elem); } 
+         }
+         var paperWidth = 1920
+         onResize(document.getElementsByClassName("paper")[0], function(e) { 
+           var k = screen.availWidth/paperWidth
+           if(screen.innerWidth > paperWidth) { k = 1/k }
+           if(screen.innerHeight < screen.innerHeight) {
+           e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
+           e.style.width = (innerWidth-2*e.offsetLeft)+"px"
+            } else {
+               e.style.width = innerWidth-80+"px"
+               e.style.marginLeft = 40 + "px"
+              }
+          })
+         onResize(document.getElementsByClassName("paper")[1], function(e) { 
+           var k = screen.innerWidth/paperWidth
+           if(screen.innerWidth > paperWidth) { k = 1/k }
+           if(screen.innerHeight < screen.innerHeight) {
+           e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
+           e.style.width = (innerWidth-2*e.offsetLeft)+"px"
+            } else {
+               e.style.width = innerWidth-80+"px"
+               e.style.marginLeft = 40 + "px"
+              }
+          })
+        document.getElementsByClassName("paper")[1].onclick = function() {
+           window.open("https://github.io/Roseinfire")
+          }
+         function background(color, imageSource, paper_width) {
+           var background=document.body
+           background.style.backgroundColor = color
+           if(imageSource) { background.style.backgroundImage = "url('" + imageSource + "')" }
+           if(paper_width) { paperWidth = paper_width }
+             }; window.onresize()
+     </script>
+    <script type="text/javascript" src="https://roseinfire.github.io/ManualGuide/iterations.js"></script>
+    <script type="text/javascript">
+        background(__manual__.backgroundColor, __manual__.backgroundImage, __manual__.width)
+        read(__manual__.innerHTML)
+      </script>
+   </body>
+ </html>
