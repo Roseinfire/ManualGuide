@@ -73,7 +73,7 @@
            background.style.backgroundColor = color
            if(imageSource) { background.style.backgroundImage = "url('" + imageSource + "')" }
            if(paper_width) { paperWidth = paper_width }
-             }; window.onresize()
+             };
      </script>
     <script type="text/javascript">
        var loads = 0
@@ -93,6 +93,7 @@
                         background(color,  image, __manual__.width)
                         document.getElementById("content").style.display = "block";
                         document.getElementById("load").style.display = "none"
+                        window.onresize()
                       }
               }
      class keyword {
