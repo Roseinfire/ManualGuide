@@ -14,11 +14,11 @@
          #Info {
                cursor: pointer;
                text-align: center;
-               font-size: 102%;
+               font-size: 104%;
                margin-top: 8px;
                mardin-bottom: 20px;
-               padding-top: 8px;
-               padding-bottom: 8px;
+               padding-top: 10px;
+               padding-bottom: 10px;
            }
          #Info:active {
                border-bottom: 2px solid;
@@ -60,7 +60,7 @@
               }
              if(e.offsetHeight < innerHeight) { 
                 e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
-              } else { e.style.marginTop = "30px" }
+              } else { e.style.marginTop = "20px" }
           })
         onResize(document.getElementById("load"), function(e) { 
               e.style.marginTop = (innerHeight-e.offsetHeight)/2 + "px"
