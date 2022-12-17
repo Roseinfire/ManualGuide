@@ -35,7 +35,6 @@
        window.onresize = function() {
         for(var i = 0; i < resizebase.length; i++) { resizebase[i].func(resizebase[i].elem); } 
          }
-         setInterval(function() { window.onresize() }, 90)
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
            var k = innerWidth/paperWidth
@@ -143,6 +142,7 @@
           var element = (function () {
              try { 
                 var res = document.createElement(type)
+                res.onload = function() { window.onresize() }
                 if(text) { res.innerHTML = text }
                 return res
                  } catch { 
