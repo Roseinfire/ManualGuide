@@ -172,8 +172,15 @@
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
-                        document.body.style.display = "block"; window.onresize() 
-                        background(__manual__.color, __manual__.image, __manual__.width)
+                        document.body.style.display = "block"; window.onresize()
+                          function get(name) { 
+                                var list = __manual__.attrubutes
+                                for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
+                                return undefined
+                                  }
+                         var color = get("color")
+                         var image = get("image)
+                        background(color,  image, __manual__.width)
                       }
               }
     </script>
