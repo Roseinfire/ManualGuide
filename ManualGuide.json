@@ -146,19 +146,21 @@
               return element
           }
          HTMLElement.prototype.attribute = function(data) {
-              searchspecs(this, data)
+              if( searchspecs(this, data) ) {
               try {
                    eval("this." + data)
                  } catch { console.error("Can't declare attribute: ", data) }
+              }
           }
         function truewrite(e) { hand.append(e) }
         var specs = []
         function searchspecs(element, data) {
+           var hasattribute = false
            for(var i = 0; i < specs.length; i++) {
                  if(specs[i].tag == element.tagName && specs[i].key == data) {
-                   specs[i](element) 
+                   specs[i](element); hasattribute = true
                      }
-                 }
+                 }; return hasattribute
            }
         specs.push({ tag: "IMG", key: "$", spec: function(e) {
            e.style.marginLeft="40px"
