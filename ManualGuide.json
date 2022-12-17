@@ -26,6 +26,7 @@
          #load {
              color: rgb(217, 206, 206);
              font-size: 40px;
+             text-align: center;
               }
       </style>
      </head>
@@ -63,7 +64,6 @@
           })
         onResize(document.getElementById("load"), function(e) { 
               e.style.marginTop = (innerHeight-e.offsetHeight)/2 + "px"
-              e.style.marginLeft = (innerWidth-e.offsetWidth)/2 + "px"
               })
         document.getElementsByClassName("paper")[1].onclick = function() {
            window.open("https://github.io/Roseinfire")
@@ -83,7 +83,6 @@
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
-                        document.body.style.display = "block";
                           function get(name) { 
                                 var list = __manual__.attributes
                                 for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
@@ -92,6 +91,8 @@
                          var color = get("color")
                          var image = get("image")
                         background(color,  image, __manual__.width)
+                        document.getElementById("content").style.display = "block";
+                        document.getElementById("load").style.display = "none"
                       }
               }
      class keyword {
