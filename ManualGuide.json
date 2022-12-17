@@ -145,10 +145,10 @@
               truewrite(element)
               return element
           }
-         HTMLElement.prototype.attribute = function(data) { 
+         HTMLElement.prototype.attribute = function(data) {
+              searchspecs(this, data)
               try {
-                   eval("this." + data) 
-                   searchspecs(this, data)
+                   eval("this." + data)
                  } catch { console.error("Can't declare attribute: ", data) }
           }
         function truewrite(e) { hand.append(e) }
