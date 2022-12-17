@@ -23,11 +23,18 @@
          #Info:active {
                border-bottom: 2px solid;
            }
+         #load {
+             color: whitesmoke;
+             font-size: 190%;
+              }
       </style>
      </head>
-   <body style="background-color: white; display: none">
+   <body style="background-color: white;">
+  <div id="content" style="display: none">
     <div class="paper"> Document Empy </div>
     <div class="paper" id="Info">Learn more</div>
+  <div>
+  <div id="load">Loading..</div>
     <script type="text/javascript">
        var hand = document.getElementsByClassName("paper")[0]
        var resizebase = new Array()
@@ -54,6 +61,10 @@
                 e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
               } else { e.style.marginTop = "30px;" }
           })
+        onResize(document.getElementById("load"), function(e) { 
+              e.style.marginTop = (innerHeight-e.offsetHeight)/2 + "px"
+              e.style.marginLeft = (innerWidth-e.offsetWidth)/2 + "px"
+              })
         document.getElementsByClassName("paper")[1].onclick = function() {
            window.open("https://github.io/Roseinfire")
           }
@@ -168,11 +179,12 @@
         function truewrite(e) { hand.append(e) }
         var loads = 0
         function awaitload(endkey) {
+          window.onresize()
           if(!loads) { document.getElementsByClassName("paper")[0].innerHTML = "" }
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
-                        document.body.style.display = "block"; window.onresize()
+                        document.body.style.display = "block";
                           function get(name) { 
                                 var list = __manual__.attrubutes
                                 for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
