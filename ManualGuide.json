@@ -83,6 +83,7 @@
            keywords.push( new keyword(start_symbol, end_symbol, result) )
             }
          function read(data) {
+           awaitload()
            var iteration = null
            var res = ""
            var pos = -1; while(data[pos+1]) {
@@ -100,6 +101,7 @@
                    if(change) { change = null }
     
                    }; if(iteration) { iteration.recall(res) }
+                    awaitload(true)
                 } 
             var tempovar = null
             var tempotext = null
@@ -143,8 +145,8 @@
              try { 
                 var res = document.createElement(type)
                 if(res.tagName == "IMG") {
-                    awaitload(res)
-                    res.onload = function() { awaitload(res, true) }
+                    awaitload()
+                    res.onload = function() { awaitload(true) }
                   }
                 if(text) { res.innerHTML = text }
                 return res
@@ -165,7 +167,7 @@
           }
         function truewrite(e) { hand.append(e) }
         var loads = 0
-        function awaitload(element, endkey) {
+        function awaitload(endkey) {
           if(!loads) { document.getElementsById("paper")[0].innerHTML = "" }
           if(!endkey) { loads++ }
           else { loads-- }
