@@ -14,9 +14,10 @@
          #Info {
                cursor: pointer;
                text-align: center;
-               font-size: 135%;
+               font-size: 110%;
                margin-top: 8px;
                mardin-bottom: 20px;
+               padding: 10px;
            }
          #Info:active {
                border-bottom: 2px solid;
