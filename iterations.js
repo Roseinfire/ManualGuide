@@ -100,12 +100,3 @@
                    })
             } })
    
-    
-    /*    
-          read(`      &list: ( "text-align: center; font-size: 120%" )   
-                      # example1 *p @list { href = "https://link-to.com" }
-                      # example2 *p @list
-                      # example3 *p @list
-                      #*img { src="https://my-image.com" } {$}
-               `)
-    */
