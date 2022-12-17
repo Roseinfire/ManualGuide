@@ -14,7 +14,7 @@
          #Info {
                cursor: pointer;
                text-align: center;
-               font-size: 110%;
+               font-size: 105%;
                margin-top: 8px;
                mardin-bottom: 20px;
                padding-top: 10px;
