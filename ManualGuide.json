@@ -146,11 +146,11 @@
               return element
           }
          HTMLElement.prototype.attribute = function(data) {
-              if( searchspecs(this, data) ) {
               try {
+                if( !searchspecs(this, data) ) {
                    eval("this." + data)
+                     }
                  } catch { console.error("Can't declare attribute: ", data) }
-              }
           }
         function truewrite(e) { hand.append(e) }
         var specs = []
