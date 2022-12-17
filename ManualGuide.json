@@ -5,7 +5,7 @@
       <title>Manual Guide</title>
       <style type="text/css">
         .paper {
-             background-color: white;
+             background-color: rgba(255, 255, 255, 0.95);
              border-radius: 20px;
              padding-bottom: 10px;
              padding-top: 15px;
