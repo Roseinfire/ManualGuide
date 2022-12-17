@@ -24,8 +24,8 @@
                border-bottom: 2px solid;
            }
          #load {
-             color: whitesmoke;
-             font-size: 190%;
+             color: rgb(217, 206, 206);
+             font-size: 40px;
               }
       </style>
      </head>
@@ -76,6 +76,24 @@
              }; window.onresize()
      </script>
     <script type="text/javascript">
+       var loads = 0
+        function awaitload(endkey) {
+          window.onresize()
+          if(!loads) { document.getElementsByClassName("paper")[0].innerHTML = "" }
+          if(!endkey) { loads++ }
+          else { loads-- }
+          if(!loads) {
+                        document.body.style.display = "block";
+                          function get(name) { 
+                                var list = __manual__.attrubutes
+                                for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
+                                return undefined
+                                  }
+                         var color = get("color")
+                         var image = get("image)
+                        background(color,  image, __manual__.width)
+                      }
+              }
      class keyword {
        constructor(start=[], end=[], recall=function() {}) {
           this.start = function(compl) {
@@ -177,24 +195,6 @@
                  } catch { console.error("Can't declare attribute: ", data) }
           }
         function truewrite(e) { hand.append(e) }
-        var loads = 0
-        function awaitload(endkey) {
-          window.onresize()
-          if(!loads) { document.getElementsByClassName("paper")[0].innerHTML = "" }
-          if(!endkey) { loads++ }
-          else { loads-- }
-          if(!loads) {
-                        document.body.style.display = "block";
-                          function get(name) { 
-                                var list = __manual__.attrubutes
-                                for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
-                                return undefined
-                                  }
-                         var color = get("color")
-                         var image = get("image)
-                        background(color,  image, __manual__.width)
-                      }
-              }
     </script>
     <script type="text/javascript">
         read(__manual__.innerHTML)
