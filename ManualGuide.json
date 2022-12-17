@@ -35,6 +35,7 @@
        window.onresize = function() {
         for(var i = 0; i < resizebase.length; i++) { resizebase[i].func(resizebase[i].elem); } 
          }
+         setInterval(function() { window.onresize() }, 90)
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
            var k = innerWidth/paperWidth
@@ -114,7 +115,7 @@
                        }
                    tempovar = null
                }) 
-            pushkeyword(["#"], ["*"], function(res) { tempotext = res;  tempowrite = null; })
+            pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
             pushkeyword(["*"], [" ", `
 `], function(res) { tempotype = res;  })
             pushkeyword(["@"], [" ", "{"], function(res) {
@@ -129,6 +130,7 @@
                       }
                })
             pushkeyword(["["], ["]"], function(res) {
+             console.log(res)
              if(tempowrite) { onResize(tempowrite, function(e) {
                 try {
                     e.style.width = hand.offsetWidth-eval(res)
