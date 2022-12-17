@@ -85,7 +85,7 @@
           if(!loads) {
                         document.body.style.display = "block";
                           function get(name) { 
-                                var list = __manual__.attrubutes
+                                var list = __manual__.attributes
                                 for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
                                 return undefined
                                   }
