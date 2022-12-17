@@ -14,11 +14,11 @@
          #Info {
                cursor: pointer;
                text-align: center;
-               font-size: 105%;
+               font-size: 102%;
                margin-top: 8px;
                mardin-bottom: 20px;
-               padding-top: 10px;
-               padding-bottom: 10px;
+               padding-top: 8px;
+               padding-bottom: 8px;
            }
          #Info:active {
                border-bottom: 2px solid;
@@ -142,7 +142,8 @@
           var element = (function () {
              try { 
                 var res = document.createElement(type)
-                res.onload = function() { window.onresize() }
+                awaitload(res)
+                res.onload = function() { awaitload(res, true) }
                 if(text) { res.innerHTML = text }
                 return res
                  } catch { 
@@ -161,9 +162,17 @@
                  } catch { console.error("Can't declare attribute: ", data) }
           }
         function truewrite(e) { hand.append(e) }
+        var loads = 0
+        function awaitload(element, endkey) {
+          if(!endkey) { loads++ }
+          else { loads-- }
+          if(!loads) {
+                        hand.style.display = "block"; window.onresize() 
+                        background(__manual__.color, __manual__.image, __manual__.width)
+                      }
+              }
     </script>
     <script type="text/javascript">
-        background(__manual__.backgroundColor, __manual__.backgroundImage, __manual__.width)
         read(__manual__.innerHTML)
       </script>
    </body>
