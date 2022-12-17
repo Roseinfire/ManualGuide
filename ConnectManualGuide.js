@@ -1,7 +1,7 @@
 
 /*  USER SIDE */
   
-fetch('../ManualGuide/ManualGuide.json')
+fetch("https://roseinfire.github.io/ManualGuide/ManualGuide.json")
   .then(response => response.text())
   .then(text => establishManualGuide(text))
  
