@@ -168,7 +168,7 @@
         function truewrite(e) { hand.append(e) }
         var loads = 0
         function awaitload(endkey) {
-          if(!loads) { document.getElementsById("paper")[0].innerHTML = "" }
+          if(!loads) { document.getElementsByClassName("paper")[0].innerHTML = "" }
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
