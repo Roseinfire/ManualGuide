@@ -1,3 +1,23 @@
+       var loads = 0
+        function awaitload(endkey) {
+          window.onresize()
+          if(!loads) { document.getElementsByClassName("paper")[0].innerHTML = "" }
+          if(!endkey) { loads++ }
+          else { loads-- }
+          if(!loads) {
+                          function get(name) { 
+                                var list = __manual__.attributes
+                                for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
+                                return undefined
+                                  }
+                         var color = get("color")
+                         var image = get("image")
+                        background(color,  image, __manual__.width)
+                        document.getElementById("content").style.display = "block";
+                        document.getElementById("load").style.display = "none"
+                        window.onresize()
+                      }
+              }
      class keyword {
        constructor(start=[], end=[], recall=function() {}) {
           this.start = function(compl) {
@@ -16,6 +36,7 @@
            keywords.push( new keyword(start_symbol, end_symbol, result) )
             }
          function read(data) {
+           awaitload()
            var iteration = null
            var res = ""
            var pos = -1; while(data[pos+1]) {
@@ -33,6 +54,7 @@
                    if(change) { change = null }
     
                    }; if(iteration) { iteration.recall(res) }
+                    awaitload(true)
                 } 
             var tempovar = null
             var tempotext = null
@@ -47,7 +69,7 @@
                        }
                    tempovar = null
                }) 
-            pushkeyword(["#"], ["*"], function(res) { tempotext = res;  tempowrite = null; })
+            pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
             pushkeyword(["*"], [" ", `
 `], function(res) { tempotype = res;  })
             pushkeyword(["@"], [" ", "{"], function(res) {
@@ -56,16 +78,29 @@
                   tempotext = null; tempotype = null;
                   } catch { console.error("Can't find link @" + res) }
                })
-            pushkeyword("{", "}", function(res) { 
+            pushkeyword(["{"], ["}"], function(res) {
                  if(tempowrite) {
                   tempowrite.attribute(res)
                       }
+               })
+            pushkeyword(["["], ["]"], function(res) {
+             if(tempowrite) { onResize(tempowrite, function(e) {
+                try {
+                    var padding = eval(res)
+                    e.style.marginLeft = 2*padding
+                    e.style.width = (hand.offsetWidth-padding) + "px"
+                      } catch { console.error("Invalid spec: ", res) }
+                   }); tempowrite = null; }
                })
   
          function write(text, type, style) { 
           var element = (function () {
              try { 
                 var res = document.createElement(type)
+                if(res.tagName == "IMG") {
+                    awaitload()
+                    res.onload = function() { awaitload(true) }
+                  }
                 if(text) { res.innerHTML = text }
                 return res
                  } catch { 
@@ -78,25 +113,9 @@
               truewrite(element)
               return element
           }
-         HTMLElement.prototype.attribute = function(data) { 
+         HTMLElement.prototype.attribute = function(data) {
               try {
-                   eval("this." + data) 
-                   searchspecs(this, data)
+                   eval("this." + data)
                  } catch { console.error("Can't declare attribute: ", data) }
           }
-        function truewrite(e) { hand.append(e) }
-        var specs = []
-        function searchspecs(element, data) {
-           for(var i = 0; i < specs.length; i++) {
-                 if(specs[i].tag == element.tagName && specs[i].key == data) {
-                   specs[i](element) 
-                     }
-                 }
-           }
-        specs.push({ tag: "IMG", key: "$", spec: function(e) {
-           e.style.marginLeft="40px"
-           e.onResize(function() {
-                 e.width = hand.offsetWidth-80
-                   })
-            } })
-   
+        function truewrite(e) { console.log(e) }
