@@ -41,7 +41,7 @@
            if(innerWidth > paperWidth) { k = 1/k }
            if(innerHeight < innerWidth) {
            e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
-           e.style.width = (innerWidth-2*e.offsetLeft)+"px"
+           e.style.width = (innerWidth-2*e.offsetLeft)+"px"; console.log("resizing..")
            document.getElementsByClassName("paper")[1].style.width = (innerWidth-2*e.offsetLeft)+"px"
             } else {
                e.style.width = innerWidth-80+"px"
