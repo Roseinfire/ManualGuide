@@ -17,7 +17,8 @@
                font-size: 110%;
                margin-top: 8px;
                mardin-bottom: 20px;
-               padding: 10px;
+               padding-top: 10px;
+               padding-bottom: 10px;
            }
          #Info:active {
                border-bottom: 2px solid;
