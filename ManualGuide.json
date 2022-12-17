@@ -158,7 +158,7 @@
            var hasattribute = false
            for(var i = 0; i < specs.length; i++) {
                  if(specs[i].tag == element.tagName && specs[i].key == data) {
-                   specs[i](element); hasattribute = true
+                   specs[i].spec(element); hasattribute = true
                      }
                  }; return hasattribute
            }
