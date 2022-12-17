@@ -36,25 +36,17 @@
          }
          var paperWidth = 1920
          onResize(document.getElementsByClassName("paper")[0], function(e) { 
-           var k = screen.availWidth/paperWidth
-           if(screen.innerWidth > paperWidth) { k = 1/k }
-           if(screen.innerHeight < screen.innerHeight) {
+           var k = innerWidth/paperWidth
+           if(innerWidth > paperWidth) { k = 1/k }
+           if(innerHeight < innerWidth) {
            e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
            e.style.width = (innerWidth-2*e.offsetLeft)+"px"
             } else {
                e.style.width = innerWidth-80+"px"
                e.style.marginLeft = 40 + "px"
               }
-          })
-         onResize(document.getElementsByClassName("paper")[1], function(e) { 
-           var k = screen.innerWidth/paperWidth
-           if(screen.innerWidth > paperWidth) { k = 1/k }
-           if(screen.innerHeight < screen.innerHeight) {
-           e.style.marginLeft = (innerWidth-innerHeight)/2*k + "px"
-           e.style.width = (innerWidth-2*e.offsetLeft)+"px"
-            } else {
-               e.style.width = innerWidth-80+"px"
-               e.style.marginLeft = 40 + "px"
+             if(e.offsetHeight < innerHeight) { 
+                e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
               }
           })
         document.getElementsByClassName("paper")[1].onclick = function() {
