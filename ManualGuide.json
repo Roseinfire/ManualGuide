@@ -60,7 +60,7 @@
               }
              if(e.offsetHeight < innerHeight) { 
                 e.style.marginTop = (innerHeight-e.offsetHeight - document.getElementsByClassName("paper")[1].offsetHeight)/2 + "px" 
-              } else { e.style.marginTop = "30px;" }
+              } else { e.style.marginTop = "30px" }
           })
         onResize(document.getElementById("load"), function(e) { 
               e.style.marginTop = (innerHeight-e.offsetHeight)/2 + "px"
