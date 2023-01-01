@@ -3,7 +3,7 @@
  <html>
    <head> 
       <title>Manual Guide</title>
-      <link rel="stylesheet" href="Styles.css"/>
+      <link rel="stylesheet" href="https://Roseinfire.github.io/ManualGuide/Styles.css"/>
      </head>
    <body style="background-color: white;">
   <div id="content" style="display: none">
@@ -50,7 +50,7 @@
            if(paper_width) { paperWidth = paper_width }
              };
      </script>
-    <script type="text/javascript" src="iterations.js"></script>
+    <script type="text/javascript" src="https://Roseinfire.github.io/ManualGuide/iterations.js"></script>
     <script type="text/javascript">read(__manual__.innerHTML)</script>
    </body>
  </html>
