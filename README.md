@@ -28,7 +28,9 @@
  ### Inner parametres
    Should be writen just inside script. <br>
     #### Creating style variable:
-          ``` &my-variable:(font-size:30px; text-align: center)  ```
+          ```json
+          &my-variable:(font-size:30px; text-align: center)  
+          ```
           * variable can take any name exclude '&' and ':'
           * value can take value exlude '(' and ')'
     #### Creating element:
