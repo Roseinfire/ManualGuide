@@ -21,7 +21,7 @@
 * backgroundImage
 * paperWidth
 * paperColor
-     As example:  
+     As example: <br> 
      ```HTML
      <script backgroundColor="black" paperWidth="1100"></script>
      ```
