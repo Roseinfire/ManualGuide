@@ -1,0 +1,24 @@
+        .paper {
+             background-color: rgba(255, 255, 255, 0.95);
+             border-radius: 20px;
+             padding-bottom: 10px;
+             padding-top: 15px;
+             border: 1px dotted;
+          }
+         #Info {
+               cursor: pointer;
+               text-align: center;
+               font-size: 104%;
+               margin-top: 8px;
+               mardin-bottom: 20px;
+               padding-top: 10px;
+               padding-bottom: 10px;
+           }
+         #Info:active {
+               border-bottom: 2px solid;
+           }
+         #load {
+             color: rgb(217, 206, 206);
+             font-size: 40px;
+             text-align: center;
+              }
