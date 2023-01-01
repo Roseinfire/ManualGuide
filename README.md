@@ -61,7 +61,8 @@ To create child node, just begin new string with '!'
 # *div @my-variable
      ! # My first child element *p @
 ```
-### Here we are. <br> For this moment it cannot replace HTML, but some things can became significanty easier.
+### Here we are. <br> For this moment it cannot replace HTML,<br>
+but some things can became significanty easier.
 P.S 
 Features marked with (!) should be avaible in the future.
 ## About safety
