@@ -28,31 +28,31 @@ As example: <br>
 ### Inner parametres
 ### Should be writen just inside script. <br>
 #### Creating style variable:
-```json
+```javascript
 &my-variable:(font-size:30px; text-align: center)  
 ```
 * variable can take any name exclude '&' and ':'
 * value can take value exlude '(' and ')'
 #### Creating an element:
-```json
+```javasript
 # my-text *type @my-variable `
 ```
 * my text is innerHTML and take any value exclude '#' and '*'
 * type is standart element name
 * my-variable is link to element style
 #### Adding attributes:
-```json
+```javascript
 #*img @ { src="my-img.com" } 
 ```
 * between symobls '{' and '}' mark standart attributes.
 #### Relative sizes:
-```json
+```javascript
 #*img @ { src="my-img.com" } [10]
 ```
 * between symbols '[' and ']' mark margin from border.
 #### Child node (!):
 To create child node begin new string and mark four spaces from parent node string.
-```json
+```javascript
 # My first child element! *div @my-variable [10]
     #*img @ { src="my-img.com" } [10]
 ```
