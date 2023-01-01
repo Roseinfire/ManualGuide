@@ -16,7 +16,7 @@
 ## Dealing with syntax..
   ### Outer parametres
    ManualGuide automaticly creates page, where load and resize events included. <br>
-     Outer parametrs defined via script attributes: <br>
+     Outer parametrs defined via script attributes:
        * backgroundColor
        * backgroundImage
        * paperWidth
