@@ -57,6 +57,8 @@ To create child node begin new string and mark four spaces from parent node stri
     #*img @ { src="my-img.com" } [10]
 ```
 ### Here we are. For this moment it cannot replace HTML, but some things can became significanty easier.
+P.S 
+Features marked with (!) should be avaible in the future.
 ## About safety
 Be careful with scripts connected from the internet. <br>
 ManualGuide is like html wrapper. <br>
