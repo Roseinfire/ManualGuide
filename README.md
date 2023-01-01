@@ -11,17 +11,17 @@
   <script src="https://Roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>
   </head></body></html>
   ```
-  This form almost all HTML you will ever write.
+  This form probably all HTML you will ever write.
   
 ## Dealing with syntax..
   ### Outer parametres
    ManualGuide automaticly creates page, where load and resize events included. <br>
-     Outer parametrs defined via script attributes:
-       * backgroundColor
-       * backgroundImage
-       * paperWidth
-       * paperColor
-     As exapmple:  
+   Outer parametrs defined via script attributes:
+     * backgroundColor
+     * backgroundImage 
+     * paperWidth
+     * paperColor
+     As example:  
      ```HTML
      <script backgroundColor="black" paperWidth="1100"> </script>
      ```
@@ -33,7 +33,7 @@
           ```
           * variable can take any name exclude '&' and ':'
           * value can take value exlude '(' and ')'
-    #### Creating element:
+    #### Creating an element:
           ```json
           # my-text *type @my-variable `
           ```
@@ -42,7 +42,7 @@
           * my-variable is link to element style
     #### Adding attributes:
          ```json
-         #*img { src="my-img.com" } 
+         #*img @ { src="my-img.com" } 
          ```
          * between symobls '{' and '}' mark standart attributes.
     #### Relative sizes:
@@ -57,6 +57,8 @@
               #*img @ { src="my-img.com" } [10]
          ```
    ### Here we are. For this moment it cannot replace HTML, but some things can became significanty easier.
+   P.S. <br>
+    Featers marked as (!) should be avaible in the future.
 ## About safety
   Be careful with scripts connected from the internet. <br>
   ManualGuide is like html wrapper. <br>
