@@ -43,7 +43,7 @@ Outer parametrs defined via script attributes
 Character '@' is also draw operator.<br>
 Even if style not specified, '@' must be marked whith space after it.
 ```javascript
-# With no style *p @ 
+# No style *p @ 
 ```
 #### Adding attributes:
 ```javascript
