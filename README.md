@@ -21,7 +21,7 @@
      *backgroundImage
      *paperWidth
      *paperColor (!)
-     As exapmple: 
+     As exapmple:  
      ```HTML
      <script backgroundColor="black" paperWidth="1100"> </script>
      ```
@@ -32,20 +32,27 @@
           *variable can take any name exclude '&' and ':'
           *value can take value exlude '(' and ')'
     #### Creating element:
-          ``` # my-text *type @my-variable ```
+          ```json
+          # my-text *type @my-variable `
+          ```
           *my text is innerHTML and take any value exclude '#' and '*'
           *type is standart element name
           *my-variable is link to element style
     #### Adding attributes:
-         ``` #*img { src="my-img.com" } ```
+         ```json
+         #*img { src="my-img.com" } 
+         ```
          *between symobls '{' and '}' mark standart attributes.
     #### Relative sizes:
-       ``` #*img @ { src="my-img.com" } [10]```
+       ```json
+       #*img @ { src="my-img.com" } [10]
+       ```
           *between symbols '[' and ']' mark margin from border.
     #### Child node (!):
         To create child node begin new string and write four spaces from parent node string.
-         ``` # My first child element! *div @my-variable [10]
-                  #*img @ { src="my-img.com" } [10]
+         ```json
+          # My first child element! *div @my-variable [10]
+              #*img @ { src="my-img.com" } [10]
          ```
    ### Here we are. For this moment it cannot replace HTML, but some things can became significanty easier.
 ## About safety
