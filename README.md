@@ -32,7 +32,7 @@ As example: <br>
 &my-variable:(font-size:30px; text-align: center)  
 ```
 * variable can take any name exclude '&' and ':'
-* value can take value exlude '(' and ')'
+* variable can take value exlude '(' and ')'
 #### Creating an element:
 ```javascript
 # my-text *type @my-variable
