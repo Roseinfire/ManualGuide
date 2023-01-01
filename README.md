@@ -6,11 +6,11 @@
   
 ## In the begining..
   When creating HTML document, connect ManualGuide script.
-  '''
+  ```HTML
   <html><head><meta charset="utf-8">
   <script src="https://Roseinfire.github.io/ManualGuide/ConnectManualGuide.js"></script>
   </head></body></html>
-  '''
+  ```
   This form almost all HTML you will ever write.
   
 ## Dealing with syntax..
@@ -24,25 +24,25 @@
  Inner parametres
      Should be writen just inside script.
      Creating style variable:
-          ''' &my-variable:(font-size:30px; text-align: center)  '''
+          ``` &my-variable:(font-size:30px; text-align: center)  ```
           * variable can take any name exclude '&' and ':'
           * value can take value exlude '(' and ')'
      Creating element:
-          ''' # my-text *type @my-variable '''
+          ``` # my-text *type @my-variable ```
           * my text is innerHTML and take any value exclude '#' and '*'
           * type is standart element name
           * my-variable is link to element style
     Adding attributes:
-          ''' #*img { src="my-img.com" } '''
+         ``` #*img { src="my-img.com" } ```
          * between symobls '{' and '}' mark standart attributes.
     Relative sizes:
-       ''' #*img @ { src="my-img.com" } [10]'''
+       ``` #*img @ { src="my-img.com" } [10]```
           * between symbols '[' and ']' mark margin from border.
   Child node (!):
         To create child node begin new string and write four spaces from parent node string.
-         ''' # My first child element! *div @my-variable [10]
+         ``` # My first child element! *div @my-variable [10]
                   #*img @ { src="my-img.com" } [10]
-         '''
+         ```
    Here we are. For this moment it cannot replace HTML, but some things can became significanty easier.
 ## About safety
   Be careful with scripts connected from the internet. ManualGuide is like wrapper. 
