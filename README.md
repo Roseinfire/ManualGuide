@@ -20,7 +20,7 @@ Outer parametrs defined via script attributes
 * backgroundColor
 * backgroundImage
 * paperWidth
-* paperColor
+* paperColor (!)
 As example: <br> 
 ```HTML
 <script backgroundColor="black" paperWidth="1100"></script>
@@ -32,7 +32,7 @@ As example: <br>
 &my-variable:(font-size:30px; text-align: center)  
 ```
 * variable can take any name exclude '&' and ':'
-* valiable takes value exlude '(' and ')'
+* value can take value exlude '(' and ')'
 #### Creating an element:
 ```javascript
 # my-text *type @my-variable
@@ -40,6 +40,9 @@ As example: <br>
 * my text is innerHTML and take any value exclude '#' and '*'
 * type is standart element name
 * my-variable is link to element style
+Character '@' is also draw operator.<br>
+Even if style not specified, '@' must be marked whith space after it.
+# With no style *p @ 
 #### Adding attributes:
 ```javascript
 #*img @ { src="my-img.com" } 
@@ -50,13 +53,13 @@ As example: <br>
 #*img @ { src="my-img.com" } [10]
 ```
 * between symbols '[' and ']' mark margin from border.
-#### Child node (!):
-To create child node begin new string and mark four spaces from parent node string.
+#### Child node:
+To create child node, just begin new string with '!'
 ```javascript
-# My first child element! *div @my-variable [10]
-    #*img @ { src="my-img.com" } [10]
+# *div @my-variable
+     ! # My first child element *p @
 ```
-### Here we are. For this moment it cannot replace HTML, but some things can became significanty easier.
+### Here we are. <br> For this moment it cannot replace HTML, but some things can became significanty easier.
 P.S 
 Features marked with (!) should be avaible in the future.
 ## About safety
