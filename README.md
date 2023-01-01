@@ -42,7 +42,7 @@ Outer parametrs defined via script attributes
 * my-variable is link to element style
 Character '@' is also draw operator.<br>
 Even if style not specified, '@' must be marked whith space after it.
-```json
+```javascript
 # With no style *p @ 
 ```
 #### Adding attributes:
