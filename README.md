@@ -62,7 +62,7 @@ To create child node, just begin new string with '!'
      ! # My first child element *p @
 ```
 ### Here we are. <br> For this moment it cannot replace HTML,<br>
-but some things can became significanty easier.
+but some things can became significanty easier. <br>
 P.S 
 Features marked with (!) should be avaible in the future.
 ## About safety
