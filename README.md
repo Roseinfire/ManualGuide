@@ -17,10 +17,10 @@
   ### Outer parametres
    ManualGuide automaticly creates page, where load and resize events included. <br>
      Outer parametrs defined via script attributes: <br>
-     *backgroundColor
-     *backgroundImage
-     *paperWidth
-     *paperColor (!)
+     * backgroundColor
+     * backgroundImage
+     * paperWidth
+     * paperColor (!)
      As exapmple:  
      ```HTML
      <script backgroundColor="black" paperWidth="1100"> </script>
@@ -29,25 +29,25 @@
    Should be writen just inside script. <br>
     #### Creating style variable:
           ``` &my-variable:(font-size:30px; text-align: center)  ```
-          *variable can take any name exclude '&' and ':'
-          *value can take value exlude '(' and ')'
+          * variable can take any name exclude '&' and ':'
+          * value can take value exlude '(' and ')'
     #### Creating element:
           ```json
           # my-text *type @my-variable `
           ```
-          *my text is innerHTML and take any value exclude '#' and '*'
-          *type is standart element name
-          *my-variable is link to element style
+          * my text is innerHTML and take any value exclude '#' and '*'
+          * type is standart element name
+          * my-variable is link to element style
     #### Adding attributes:
          ```json
          #*img { src="my-img.com" } 
          ```
-         *between symobls '{' and '}' mark standart attributes.
+         * between symobls '{' and '}' mark standart attributes.
     #### Relative sizes:
        ```json
        #*img @ { src="my-img.com" } [10]
        ```
-          *between symbols '[' and ']' mark margin from border.
+          * between symbols '[' and ']' mark margin from border.
     #### Child node (!):
         To create child node begin new string and write four spaces from parent node string.
          ```json
