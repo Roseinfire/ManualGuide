@@ -14,8 +14,8 @@
   This form probably all HTML you will ever write.
   
 ## Dealing with syntax..
-  ### Outer parametres
-   ManualGuide automaticly creates page, where load and resize events included. <br>
+  ## Outer parametres
+   ManualGuide automaticly creates page, where load and resize events included. 
    Outer parametrs defined via script attributes:
      As example:  
      ```HTML
