@@ -34,7 +34,7 @@ As example: <br>
 * variable can take any name exclude '&' and ':'
 * value can take value exlude '(' and ')'
 #### Creating an element:
-```javasript
+```javascript
 # my-text *type @my-variable `
 ```
 * my text is innerHTML and take any value exclude '#' and '*'
