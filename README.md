@@ -21,7 +21,7 @@ Outer parametrs defined via script attributes
 * backgroundImage
 * paperWidth
 * paperColor (!)
-As example: <br> 
+#### As example: 
 ```HTML
 <script backgroundColor="black" paperWidth="1100"></script>
 ```
