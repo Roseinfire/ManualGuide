@@ -93,20 +93,20 @@
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
-                     try {
-                                var color = getouter("theme")
-                                var image = getouter("background")
-                                var style = getouter("style")
-                                var width = getouter("screen")
-                                background(color,  image, width)
-                                document.getElementsByClassName("paper")[0].style = style
-                                document.getElementsByClassName("paper")[1].style = style
-                                document.getElementById("content").style.display = "block";
-                                document.getElementById("load").style.display = "none";
-                                if( window.onresize) { window.onresize() }  
-                       } catch { console.warn("iterations run was not standart") }
-                   }
-             }
+              try {
+                var color = getouter("theme")
+                var image = getouter("background")
+                var style = getouter("style")
+                var width = getouter("screen")
+                background(color,  image, width)
+                document.getElementsByClassName("paper")[0].style = style
+                document.getElementsByClassName("paper")[1].style = style
+                document.getElementById("content").style.display = "block";
+                document.getElementById("load").style.display = "none";
+                if( window.onresize) { window.onresize() }  
+            } catch { console.warn("iterations run was not standart") }
+        }
+   }
      class keyword {
        constructor(start=[], end=[], recall=function() {}) {
           this.start = function(compl) {
