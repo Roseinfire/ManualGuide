@@ -27,10 +27,9 @@ Outer parametrs defined via script attributes
 * screen
 * style
 * fetch
-As example: <br> 
+#### As example:
 ```HTML
-<script screen="2200" theme="pink" 
-  style="border: 0; color: white; background-color: black"></script>
+<script screen="2200" theme="pink" style="border: 0"></script>
 ```
 ### Inner parametres
 ### Should be writen just inside script. <br>
