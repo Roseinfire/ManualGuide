@@ -1,4 +1,4 @@
-        var loads = 0
+      var loads = 0
         function awaitload(endkey) {
           if( window.onresize) { window.onresize() }
           var papers = document.getElementsByClassName("paper")
@@ -6,21 +6,20 @@
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
-                  function get(name) { 
-                      var list = __manual__.attributes
-                      for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
-                      return undefined
-                  }
-                     try {
-                                var color = get("color")
-                                var image = get("image")
-                                background(color,  image, __manual__.width)
-                                document.getElementById("content").style.display = "block";
-                                document.getElementById("load").style.display = "none";
-                                if( window.onresize) { window.onresize() }  
-                       } catch { console.warn("iterations run was not standart") }
-                   }
-             }
+              try {
+                var color = getouter("theme")
+                var image = getouter("background")
+                var style = getouter("style")
+                var width = getouter("screen")
+                background(color,  image, width)
+                document.getElementsByClassName("paper")[0].style = style
+                document.getElementsByClassName("paper")[1].style = style
+                document.getElementById("content").style.display = "block";
+                document.getElementById("load").style.display = "none";
+                if( window.onresize) { window.onresize() }  
+            } catch { console.log("iterations run was not standart") }
+        }
+   }
      class keyword {
        constructor(start=[], end=[], recall=function() {}) {
           this.start = function(compl) {
@@ -66,28 +65,39 @@
             var tempotext = null
             var tempotype = null
             var tempowrite = null
-            var childhood = null
+            var childhood = 0
             var nods = new Array()
+            var styles = new Array()
+            function getvalue(name, err) {
+              for(var i = 0; i < styles.length; i++) {
+                if(styles[i].name == name) { return styles[i].data }
+                };
+              if(err) { console.error("Can't find link @" + res) }
+             }
+            function setvalue(name, data) {
+              if( !getvalue(name) ) {
+                styles.push({ name: name, data: data })
+               } else { console.error("variable didn't created: double name error") }
+             }
             pushkeyword(["&"], [":"], function(res) { tempovar = res; })
             pushkeyword(["("], [")"], function(res) { 
-                  try { 
-                    eval("window." + tempovar + " = '" + res + "'");
-                  } catch { 
-                     console.error("Invalid variable: ", tempovar, "=", res)
-                       }
+                   setvalue(tempovar, res)
                    tempovar = null
                }) 
-            pushkeyword(["!"], ["#"], function(res) { childhood = true; })
+            pushkeyword(["-"], ["#"], function(res) {
+             var result = 1;
+             for(var i = 0; i < res.length; i++) {
+              if(res[i] == "-") { result++ }
+              }
+             childhood = result;
+            })
             pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
-            pushkeyword(["*"], [" ", `
-`], function(res) { tempotype = res;  })
+            pushkeyword(["*"], [" ", "@"], function(res) { tempotype = res;  })
             pushkeyword(["@"], [" ", "{", "["], function(res) {
-                try {
-                  tempowrite = write(tempotext, tempotype, eval(res))
+                  tempowrite = write(tempotext, tempotype, getvalue(res))
                   nods.push({ node: tempowrite, childhood: childhood })
                   truewrite()
-                  tempotext = null; tempotype = null; childhood = null
-                  } catch { console.error("Can't find link @" + res) }
+                  tempotext = null; tempotype = null; childhood = 0 
                })
             pushkeyword(["{"], ["}"], function(res) {
                  if(tempowrite) {
@@ -100,7 +110,7 @@
                     var padding = eval(res)
                     e.style.marginLeft = padding/2 + "px"
                     e.style.width = (hand.offsetWidth-padding) + "px"
-                      } catch { console.error("Invalid spec: ", res) }
+                      } catch { console.error("Invalid number: ", res) }
                            }); 
                        }
                })
@@ -131,12 +141,16 @@
           }
        function truewrite() {
               var i = nods.length-1
-                 if(nods[i].childhood) { 
-                       try { nods[i-1].node.append(nods[i].node) }
-                       catch { console.error("this node can't be a child > ", i) }
-                  } else {
-                     try{ 
-                         hand.append(nods[i].node)
-                 } catch { console.err(nods[i].node) }
+                 if(nods[i].childhood) {
+                       try {
+                         for(var e = 0;  e <= i; e++) { 
+                        
+                          if(nods[i-e].childhood == nods[i].childhood-1) {
+                            nods[i-e].node.append(nods[i].node)
+                              }
+                           }  
+                          
+                       } catch { console.error("failed to create child", nods[i]) }
+                  } else { try{ hand.append(nods[i].node) } catch { console.err(nods[i].node) }
               }
           }
