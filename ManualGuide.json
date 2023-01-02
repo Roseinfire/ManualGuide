@@ -216,7 +216,8 @@
                      try{ 
                          hand.append(nods[i].node)
                  } catch { console.err(nods[i].node) }
-            }
+              }
+          }
     </script>
     <script type="text/javascript">read(__manual__.innerHTML)</script>
    </body>
