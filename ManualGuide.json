@@ -192,6 +192,7 @@
                     res.onload = function() { awaitload(true) }
                   }
                 if(text) { res.innerHTML = text }
+                if(style) { res.style = style }
                 return res
                  } catch { 
                       console.warn("Element creation failed *" + type)
@@ -199,7 +200,6 @@
                       return err
                    }
                })()
-              element.style = style
               return element
           }
          HTMLElement.prototype.attribute = function(data) {
