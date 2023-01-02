@@ -90,12 +90,6 @@
                       return undefined
                   }
                      try {
-                              for(var i = 0; i < nods.length; i++) {
-                                   if(nods[i].childhood) { 
-                                      try { nods[i-1].append(nods[i].node) }
-                                      catch { console.error("this node can't be a child > ", i) }
-                                           } else { hand.append(nods[i].node) }
-                                      }
                                 var color = get("color")
                                 var image = get("image")
                                 background(color,  image, __manual__.width)
@@ -165,10 +159,11 @@
             pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
             pushkeyword(["*"], [" ", `
 `], function(res) { tempotype = res;  })
-            pushkeyword(["@"], [" ", "{"], function(res) {
+            pushkeyword(["@"], [" ", "{", "["], function(res) {
                 try {
                   tempowrite = write(tempotext, tempotype, eval(res))
                   nods.push({ node: tempowrite, childhood: childhood })
+                  truewrite()
                   tempotext = null; tempotype = null; childhood = null
                   } catch { console.error("Can't find link @" + res) }
                })
@@ -211,7 +206,17 @@
               try {
                    eval("this." + data)
                  } catch { console.error("Can't declare attribute: ", data) }
-          }  
+          }
+       function truewrite() {
+              var i = nods.length-1
+                 if(nods[i].childhood) { 
+                       try { nods[i-1].append(nods[i].node) }
+                       catch { console.error("this node can't be a child > ", i) }
+                  } else {
+                     try{ 
+                         hand.append(nods[i].node)
+                 } catch { console.err(nods[i].node) }
+            }
     </script>
     <script type="text/javascript">read(__manual__.innerHTML)</script>
    </body>
