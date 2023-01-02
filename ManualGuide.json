@@ -237,7 +237,7 @@
        if(source) {
          fetch(source)
           .then(response => response.text())
-          .then(text => read(text)) { read(__manual__.innerHTML) }
+          .then(text => read(text)) } else { read(__manual__.innerHTML) }
       </script>
    </body>
  </html>
