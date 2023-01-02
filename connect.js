@@ -6,7 +6,7 @@ fetch("https://roseinfire.github.io/ManualGuide/ManualGuide.json")
     window.__manual__ = (function() {
        var scripts = document.getElementsByTagName("script")
        for(var i = 0; i < scripts.length; i++) {
-        if(scripts[i].src == "https://roseinfire.github.io/ManualGuide/ConnectManualGuide.js") { return scripts[i] }
+        if(scripts[i].src == "https://roseinfire.github.io/ManualGuide/connect.js") { return scripts[i] }
          }
        var scr = document.createElement("script")
        return scr
