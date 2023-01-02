@@ -233,12 +233,11 @@
           }
     </script>
     <script type="text/javascript">
-       var fch = getouter("fetch")
-       if(fch) {
-         
-          } else {
-             read(__manual__.innerHTML)
-         }
+       var source = getouter("fetch")
+       if(source) {
+         fetch(source)
+          .then(response => response.text())
+          .then(text => read(text)) { read(__manual__.innerHTML) }
       </script>
    </body>
  </html>
