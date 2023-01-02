@@ -146,26 +146,31 @@
             var tempowrite = null
             var childhood = null
             var nods = new Array()
+            var styles = new Array()
+            function getvalue(name, err) {
+              for(var i = 0; i < styles.length; i++) {
+                if(styles[i].name == name) { return styles[i].data }
+                };
+              if(err) { console.error("Can't find link @" + res) }
+             }
+            function setvalue(name, data) {
+              if( !getvalue(name) ) {
+                styles.push({ name: name, data: data })
+               } else { console.error("variable didn't created: double name error") }
+             }
             pushkeyword(["&"], [":"], function(res) { tempovar = res; })
             pushkeyword(["("], [")"], function(res) { 
-                  try { 
-                    eval("window." + tempovar + " = '" + res + "'");
-                  } catch { 
-                     console.error("Invalid variable: ", tempovar, "=", res)
-                       }
+                   setvalue(tempovar, res)
                    tempovar = null
                }) 
             pushkeyword(["!"], ["#"], function(res) { childhood = true; })
             pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
-            pushkeyword(["*"], [" ", `
-`], function(res) { tempotype = res;  })
+            pushkeyword(["*"], [" ", "@"], function(res) { tempotype = res;  })
             pushkeyword(["@"], [" ", "{", "["], function(res) {
-                try {
-                  tempowrite = write(tempotext, tempotype, eval(res))
+                  tempowrite = write(tempotext, tempotype, getvalue(res))
                   nods.push({ node: tempowrite, childhood: childhood })
                   truewrite()
-                  tempotext = null; tempotype = null; childhood = null
-                  } catch { console.error("Can't find link @" + res) }
+                  tempotext = null; tempotype = null; childhood = null    
                })
             pushkeyword(["{"], ["}"], function(res) {
                  if(tempowrite) {
@@ -178,7 +183,7 @@
                     var padding = eval(res)
                     e.style.marginLeft = padding/2 + "px"
                     e.style.width = (hand.offsetWidth-padding) + "px"
-                      } catch { console.error("Invalid spec: ", res) }
+                      } catch { console.error("Invalid number: ", res) }
                            }); 
                        }
                })
