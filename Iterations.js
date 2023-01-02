@@ -1,4 +1,4 @@
-       var loads = 0
+        var loads = 0
         function awaitload(endkey) {
           if( window.onresize) { window.onresize() }
           var papers = document.getElementsByClassName("paper")
@@ -12,12 +12,6 @@
                       return undefined
                   }
                      try {
-                              for(var i = 0; i < nods.length; i++) {
-                                   if(nods[i].childhood) { 
-                                      try { nods[i-1].append(nods[i].node) }
-                                      catch { console.error("this node can't be a child > ", i) }
-                                           } else { hand.append(nods[i].node) }
-                                      }
                                 var color = get("color")
                                 var image = get("image")
                                 background(color,  image, __manual__.width)
@@ -87,10 +81,11 @@
             pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
             pushkeyword(["*"], [" ", `
 `], function(res) { tempotype = res;  })
-            pushkeyword(["@"], [" ", "{"], function(res) {
+            pushkeyword(["@"], [" ", "{", "["], function(res) {
                 try {
                   tempowrite = write(tempotext, tempotype, eval(res))
                   nods.push({ node: tempowrite, childhood: childhood })
+                  truewrite()
                   tempotext = null; tempotype = null; childhood = null
                   } catch { console.error("Can't find link @" + res) }
                })
@@ -103,7 +98,7 @@
              if(tempowrite) { onResize(tempowrite, function(e) {
                 try {
                     var padding = eval(res)
-                    e.style.marginLeft = 2*padding
+                    e.style.marginLeft = padding/2 + "px"
                     e.style.width = (hand.offsetWidth-padding) + "px"
                       } catch { console.error("Invalid spec: ", res) }
                            }); 
@@ -119,6 +114,7 @@
                     res.onload = function() { awaitload(true) }
                   }
                 if(text) { res.innerHTML = text }
+                if(style) { res.style = style }
                 return res
                  } catch { 
                       console.warn("Element creation failed *" + type)
@@ -126,7 +122,6 @@
                       return err
                    }
                })()
-              element.style = style
               return element
           }
          HTMLElement.prototype.attribute = function(data) {
@@ -134,4 +129,14 @@
                    eval("this." + data)
                  } catch { console.error("Can't declare attribute: ", data) }
           }
-  
+       function truewrite() {
+              var i = nods.length-1
+                 if(nods[i].childhood) { 
+                       try { nods[i-1].node.append(nods[i].node) }
+                       catch { console.error("this node can't be a child > ", i) }
+                  } else {
+                     try{ 
+                         hand.append(nods[i].node)
+                 } catch { console.err(nods[i].node) }
+              }
+          }
