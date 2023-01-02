@@ -1,8 +1,8 @@
-## What is ManualGuide?
+## What is HtmlScript?
 Was it ever boring write typical HTML pages? <br>
 If you ever though about web presentations, you probably stopped due it's boring creation. <br>
 Never stop. Just upgrade to new level. <br> 
-ManualGuide is decoration language to work with HTML easily. <br>
+HtmlScript is decoration language to work with HTML easily. <br>
   
 ## In the begining..
 When creating HTML document, connect ManualGuide script.
@@ -32,22 +32,27 @@ Outer parametrs defined via script attributes
 <script screen="2200" theme="pink" style="border: 0"></script>
 ```
 ### Inner parametres
-### Should be writen just inside script. <br>
+#### Just inside script.
+```HTML
+<script screen="2200" theme="pink" style="border: 0">
+  Not specified text is just comment.
+</script>
+```
 #### Creating style:
 ```javascript
 &my-style:( font-size:30px; text-align: center )  
 ```
 * variable can take any name exclude '&' and ':'
-* value can take value exlude '(' and ')'
+* variable can take value exlude '(' and ')'
 #### Creating an element:
 ```javascript
 # My text *type @style
 ```
 * my text is innerHTML and take any value exclude '#' and '*'
-* type is standart element name
+* type takes standat tag name
 * style is link like &style:()
 Character '@' is also draw operator.<br>
-Even if style not specified, '@' must be marked with space after it.
+Even if style not specified, '@' must be used.
 ```javascript
   # With no style *p @ 
 ```
@@ -68,9 +73,9 @@ To specify child node, just begin command from "-"
      - # *div @
      -- # Hello child nods! *div @ 
 ```
-### Here we are. 
+### Congratulations! You understood HtmlScript. 
 ### For this moment it cannot replace HTML.
-### Nevertheless some things can became significanty easier.
+### Nevertheless, some things can became significanty easier.
 ## About safety
 Be careful with scripts connected from the internet. <br>
 ManualGuide is like html wrapper. <br>
