@@ -152,7 +152,7 @@
             var tempotext = null
             var tempotype = null
             var tempowrite = null
-            var childhood = null
+            var childhood = 0
             var nods = new Array()
             var styles = new Array()
             function getvalue(name, err) {
@@ -171,14 +171,20 @@
                    setvalue(tempovar, res)
                    tempovar = null
                }) 
-            pushkeyword(["!"], ["#"], function(res) { childhood = true; })
+            pushkeyword(["-"], ["#"], function(res) {
+             var result = 1;
+             for(var i = 0; i < res.length; i++) {
+              if(res[i] == "-") { result++ }
+              }
+             childhood = result;
+            })
             pushkeyword(["#"], ["*"], function(res) { tempotext = res; })
             pushkeyword(["*"], [" ", "@"], function(res) { tempotype = res;  })
             pushkeyword(["@"], [" ", "{", "["], function(res) {
                   tempowrite = write(tempotext, tempotype, getvalue(res))
                   nods.push({ node: tempowrite, childhood: childhood })
                   truewrite()
-                  tempotext = null; tempotype = null; childhood = null    
+                  tempotext = null; tempotype = null; childhood = 0 
                })
             pushkeyword(["{"], ["}"], function(res) {
                  if(tempowrite) {
@@ -222,13 +228,17 @@
           }
        function truewrite() {
               var i = nods.length-1
-                 if(nods[i].childhood) { 
-                       try { nods[i-1].node.append(nods[i].node) }
-                       catch { console.error("this node can't be a child > ", i) }
-                  } else {
-                     try{ 
-                         hand.append(nods[i].node)
-                 } catch { console.err(nods[i].node) }
+                 if(nods[i].childhood) {
+                       try {
+                         for(var e = 0;  e > 0; e++) { 
+                        
+                          if(nods[i-e].childhood == nods[i].childhood-1) {
+                            nods[i-e].node.append(nods[i].node)
+                              }
+                           }  
+                          
+                       } catch { console.error("failed to create child", nods[i]) }
+                  } else { try{ hand.append(nods[i].node) } catch { console.err(nods[i].node) }
               }
           }
     </script>
