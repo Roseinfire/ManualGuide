@@ -210,7 +210,7 @@
        function truewrite() {
               var i = nods.length-1
                  if(nods[i].childhood) { 
-                       try { nods[i-1].append(nods[i].node) }
+                       try { nods[i-1].node.append(nods[i].node) }
                        catch { console.error("this node can't be a child > ", i) }
                   } else {
                      try{ 
