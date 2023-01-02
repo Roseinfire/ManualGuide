@@ -78,6 +78,11 @@
                     }
                  }
              };
+           function getouter(name) { 
+               var list = __manual__.attributes
+               for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
+                  return undefined
+                }
      </script>
     <script type="text/javascript">
         var loads = 0
@@ -88,16 +93,11 @@
           if(!endkey) { loads++ }
           else { loads-- }
           if(!loads) {
-                  function get(name) { 
-                      var list = __manual__.attributes
-                      for(var i = 0; i < list.length; i++) { if(list[i].name == name) { return list[i].value } } 
-                      return undefined
-                  }
                      try {
-                                var color = get("theme")
-                                var image = get("background")
-                                var style = get("style")
-                                var width = get("screen")
+                                var color = getouter("theme")
+                                var image = getouter("background")
+                                var style = getouter("style")
+                                var width = getouter("screen")
                                 background(color,  image, width)
                                 document.getElementsByClassName("paper")[0].style = style
                                 document.getElementsByClassName("paper")[1].style = style
@@ -232,6 +232,13 @@
               }
           }
     </script>
-    <script type="text/javascript">read(__manual__.innerHTML)</script>
+    <script type="text/javascript">
+       var fch = getouter("fetch")
+       if(fch) {
+         
+          } else {
+             read(__manual__.innerHTML)
+         }
+      </script>
    </body>
  </html>
