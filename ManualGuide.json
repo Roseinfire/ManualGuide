@@ -73,7 +73,7 @@
            background.style.backgroundColor = color
            if(imageSource) { background.style.backgroundImage = "url('" + imageSource + "')" }
            if(paper_width) { 
-               try { paperWidth = paper_width } catch { 
+               try { paperWidth = eval(paper_width) } catch { 
                    console.error("expected screen width is not a number", paper_width)
                     }
                  }
