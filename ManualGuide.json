@@ -176,7 +176,7 @@
              if(tempowrite) { onResize(tempowrite, function(e) {
                 try {
                     var padding = eval(res)
-                    e.style.marginLeft = 2*padding + "px"
+                    e.style.marginLeft = padding/2 + "px"
                     e.style.width = (hand.offsetWidth-padding) + "px"
                       } catch { console.error("Invalid spec: ", res) }
                            }); 
