@@ -90,9 +90,13 @@
                       return undefined
                   }
                      try {
-                                var color = get("color")
-                                var image = get("image")
-                                background(color,  image, __manual__.width)
+                                var color = get("theme")
+                                var image = get("background")
+                                var style = get("style")
+                                var width = get("screen")
+                                background(color,  image, width)
+                                document.getElementsByClassName("paper")[0].style = style
+                                document.getElementsByClassName("paper")[1].style = style
                                 document.getElementById("content").style.display = "block";
                                 document.getElementById("load").style.display = "none";
                                 if( window.onresize) { window.onresize() }  
